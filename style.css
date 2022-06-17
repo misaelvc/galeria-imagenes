@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial";
+  background: linear-gradient(115deg, #f8a196 0%, #b57271 50%, #825054 100%);
+}
+
+h1 {
+  font-family: "Zen Tokyo Zoo", cursive;
+  color: #fff6cf;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 150px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.gallery__item {
+  position: relative;
+}
+
+.gallery__item img {
+  box-shadow: 0 8px 10px -4px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__img:hover {
+  filter: grayscale(80%);
+  cursor: pointer;
+  transition: filter 0.5s;
+}
+
+.gallery__title {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  font-size: 12px;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #f8efed;
+  border-radius: 15px;
+  width: 100%;
+  margin: 0;
+}
+
+.container-img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease-in;
+}
+
+.move {
+  transform: translateX(0);
+}
+
+.img-show {
+  max-height: 70%;
+  max-width: 80%;
+  transform: scale(0);
+  display: block;
+  object-fit: cover;
+  transition: transform 0.2s 0.4s;
+}
+
+.show {
+  transform: scale(1);
+}
+
+.copy {
+  position: fixed;
+  color: #fff;
+  bottom: 25px;
+  width: 25%;
+  height: auto;
+  padding: 3px;
+  margin: auto;
+  background: #1b2135;
+  box-shadow: 2px 3px #434b6c;
+  border-radius: 5%;
+  font-size: 16px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.bx.bx-x {
+  position: absolute;
+  color: #fff;
+  top: 40px;
+  right: 3%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx.bx-left-arrow {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 4%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.bx.bx-right-arrow {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  right: 4%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/*Responsive*/
+@media screen and (min-width: 400px) and (max-width: 650px) {
+  h1 {
+    font-family: "Zen Tokyo Zoo", cursive;
+    color: #fff6cf;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .copy {
+    width: 50%;
+    bottom: 30px;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bx.bx-x {
+    top: 10px;
+    font-size: 20px;
+  }
+
+  .bx.bx-left-arrow {
+    top: 50%;
+    left: 0;
+    font-size: 18px;
+  }
+
+  .bx.bx-right-arrow {
+    top: 50%;
+    right: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 800px) {
+  .copy {
+    width: 40%;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(8) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(10) {
+    grid-row-start: span 2;
+  }
+
+  .bx.bx-x {
+    top: 15px;
+    font-size: 25px;
+  }
+
+  .bx.bx-left-arrow {
+    top: 50%;
+    left: 0;
+    font-size: 25px;
+  }
+
+  .bx.bx-right-arrow {
+    top: 50%;
+    right: 0;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .copy {
+    width: 30%;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(5) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(6) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(7) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(8) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(9) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(10) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(11) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(12) {
+    grid-column-start: span 2;
+  }
+
+  .bx.bx-x {
+    top: 20px;
+    font-size: 30px;
+  }
+
+  .bx.bx-left-arrow {
+    top: 50%;
+    left: 0;
+    font-size: 30px;
+  }
+
+  .bx.bx-right-arrow {
+    top: 50%;
+    right: 0;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(5) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(6) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(7) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(8) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(9) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(10) {
+    grid-row-start: span 2;
+  }
+
+  .gallery__item:nth-child(11) {
+    grid-column-start: span 2;
+  }
+
+  .gallery__item:nth-child(12) {
+    grid-column-start: span 2;
+  }
+}
